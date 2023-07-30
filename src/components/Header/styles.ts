@@ -16,8 +16,12 @@ export const Content = styled.div`
     justify-content: space-between;
 
     margin: 0 auto;
-    max-width: 1420px;
-    padding: 2.5rem 1.25rem;
+    max-width: 1120px;
+    padding: 2.5rem 0rem;
+
+    @media(max-width: 1200px) {
+        padding: 2.5rem 1.25rem;
+    }
 `
 
 export const ButtonTransation = styled.button`
