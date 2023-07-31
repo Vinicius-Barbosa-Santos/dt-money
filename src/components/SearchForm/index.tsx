@@ -16,7 +16,7 @@ export const SearchForm = () => {
                 </form>
 
                 <C.ButtonSearch>
-                    <MagnifyingGlass size={20} color='#00B37E'/>
+                    <MagnifyingGlass size={20} />
                     <span>Buscar</span>
                 </C.ButtonSearch>
             </C.ContentForm>

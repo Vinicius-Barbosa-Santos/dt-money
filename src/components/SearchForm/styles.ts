@@ -21,8 +21,16 @@ export const ContentForm = styled.div`
         border: 0;
         border-radius: 6px;
 
-        color: ${({ theme }) => theme['gray-500']};
+        color: ${({ theme }) => theme['gray-300']};
         background-color: ${({ theme }) => theme['gray-900']};
+
+        &:focus {
+            box-shadow: 0 0 0 2px ${(props) => props.theme['green-500']};
+        }
+
+        &::placeholder {
+            color: ${({ theme }) => theme['gray-500']};
+        }
     }
 
     @media(max-width: 1200px) {
@@ -37,19 +45,26 @@ export const ButtonSearch = styled.button`
     align-items: center;
     justify-content: center;
 
+    cursor: pointer;
+
     padding: 0.875rem 2rem;
 
     gap : 0.75rem;
 
     border: 0;
     border-radius: 6px;
+    color: ${({ theme }) => theme['green-300']};
     border: 1px solid ${({ theme }) => theme['green-300']};
 
     background: transparent;
 
+    &:hover {
+        color: ${(props) => props.theme.white};
+        background: ${(props) => props.theme['green-500']};
+    }
+
     span {
         font-weight: bold;
-        color: ${({ theme }) => theme['green-300']};
 
         @media(max-width: 769px) {
             display: none;
