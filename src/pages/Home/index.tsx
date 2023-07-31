@@ -1,6 +1,7 @@
 // import Components
 import { Header } from "../../components/Header"
 import { Summary } from "../../components/Summary"
+import { SearchForm } from "../../components/SearchForm"
 import { TableTransactions } from "../../components/TableTransactions"
 
 const Home = () => {
@@ -8,6 +9,8 @@ const Home = () => {
     <>
       <Header />
       <Summary />
+      <SearchForm />
+
       <TableTransactions />
     </>
   )

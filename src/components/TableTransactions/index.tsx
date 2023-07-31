@@ -11,7 +11,7 @@ export const TableTransactions = () => {
                         <tr>
                             <td width='50%'>Desenvolvimento do site</td>
                             <td>
-                                <C.PriceHighlight variant='income'>
+                                <C.PriceHighlight $variant='income'>
                                     R$ 12.000,00
                                 </C.PriceHighlight>
                             </td>
@@ -22,7 +22,7 @@ export const TableTransactions = () => {
                         <tr>
                             <td width='50%'>Hamburguer</td>
                             <td>
-                                <C.PriceHighlight variant='outcome'>
+                                <C.PriceHighlight $variant='outcome'>
                                     R$ -59.00,00
                                 </C.PriceHighlight>
                             </td>
@@ -36,7 +36,7 @@ export const TableTransactions = () => {
                     <C.CardTransaction>
                         <header>
                             <span>Desenvolvimento do site</span>
-                            <C.PriceHighlight variant='income'>
+                            <C.PriceHighlight $variant='income'>
                                 R$ 12.000,00
                             </C.PriceHighlight>
                         </header>
@@ -57,7 +57,7 @@ export const TableTransactions = () => {
                     <C.CardTransaction>
                         <header>
                             <span>Hamburguer</span>
-                            <C.PriceHighlight variant='outcome'>
+                            <C.PriceHighlight $variant='outcome'>
                                 R$ -59.00,00
                             </C.PriceHighlight>
                         </header>

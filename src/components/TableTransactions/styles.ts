@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.main`
     width: 100%;
     max-width: 1120px;
-    margin: 4rem auto 0;
+    margin: 0 auto;
 
     @media(max-width: 1200px) {
         padding: 0rem 1.25rem;
@@ -40,12 +40,12 @@ export const TransactionsTable = styled.table`
 `
 
 interface PriceHighlightProps {
-    variant: 'income' | 'outcome';
+    $variant: 'income' | 'outcome';
 }
 
 
 export const PriceHighlight = styled.span<PriceHighlightProps>`
-    color : ${(props) => props.variant === 'income' ? props.theme['green-300'] : props.theme['red-300']};
+    color : ${($props) => $props.$variant === 'income' ? $props.theme['green-300'] : $props.theme['red-300']};
 
     @media (max-width: 769px) {
       font-weight: 700;
