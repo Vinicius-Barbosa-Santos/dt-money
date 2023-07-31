@@ -1,0 +1,28 @@
+{
+    "transactions": [
+        {
+            "id": 1,
+            "description": "Desenvolvimento do site",
+            "type" : "income",
+            "category": "Venda",
+            "price": 14000,
+            "createdAt" : "2023-07-31T17:16:43.783Z"
+        },
+        {
+            "id": 2,
+            "description": "Hamburguer",
+            "type" : "outcome",
+            "category": "Alimentação",
+            "price": 50,
+            "createdAt" : "2023-07-31T17:21:43.783Z"
+        },
+         {
+            "id": 3,
+            "description": "Ignite Rockseat",
+            "type" : "outcome",
+            "category": "Educação",
+            "price": 1980,
+            "createdAt" : "2023-07-31T17:24:44.783Z"
+        }
+    ]
+}

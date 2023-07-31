@@ -1,77 +1,62 @@
 // import Styled Components
-import { CalendarBlank, TagSimple } from 'phosphor-react'
 import * as C from './styles'
 
+// import Phosphor
+import { CalendarBlank, TagSimple } from 'phosphor-react'
+
+// import Context
+import { useContext } from 'react'
+import { TrasactionsContext } from '../../context/TransactionsContext'
+
+// import utils 
+import { priceFormatter } from '../../utils/formatter'
+
 export const TableTransactions = () => {
+
+    const { transactions } = useContext(TrasactionsContext)
+
     return (
         <div>
             <C.Container>
                 <C.TransactionsTable>
                     <tbody>
-                        <tr>
-                            <td width='50%'>Desenvolvimento do site</td>
-                            <td>
-                                <C.PriceHighlight $variant='income'>
-                                    R$ 12.000,00
-                                </C.PriceHighlight>
-                            </td>
-                            <td>Venda</td>
-                            <td>13/04/2022</td>
-                        </tr>
-
-                        <tr>
-                            <td width='50%'>Hamburguer</td>
-                            <td>
-                                <C.PriceHighlight $variant='outcome'>
-                                    R$ -59.00,00
-                                </C.PriceHighlight>
-                            </td>
-                            <td>Alimentação</td>
-                            <td>10/04/2022</td>
-                        </tr>
+                        {transactions.map((transaction) =>
+                            <tr key={transaction.id}>
+                                <td width='50%'>{transaction.description}</td>
+                                <td>
+                                    <C.PriceHighlight $variant={transaction.type}>
+                                        {transaction.type === 'outcome' ? '- ' : ''}
+                                        {priceFormatter.format(transaction.price)}
+                                    </C.PriceHighlight>
+                                </td>
+                                <td>{transaction.category}</td>
+                                <td>{transaction.createdAt}</td>
+                            </tr>
+                        )}
                     </tbody>
                 </C.TransactionsTable>
 
                 <C.TransactionCardList>
-                    <C.CardTransaction>
-                        <header>
-                            <span>Desenvolvimento do site</span>
-                            <C.PriceHighlight $variant='income'>
-                                R$ 12.000,00
-                            </C.PriceHighlight>
-                        </header>
-                        <footer>
-                            <div>
-                                <TagSimple size={16} />
-                                Venda
-                            </div>
-                            <div>
-                                <CalendarBlank size={16} />
-                                10/04/2022
-                            </div>
-                        </footer>
-                    </C.CardTransaction>
-                </C.TransactionCardList>
-
-                <C.TransactionCardList>
-                    <C.CardTransaction>
-                        <header>
-                            <span>Hamburguer</span>
-                            <C.PriceHighlight $variant='outcome'>
-                                R$ -59.00,00
-                            </C.PriceHighlight>
-                        </header>
-                        <footer>
-                            <div>
-                                <TagSimple size={16} />
-                                Alimentação
-                            </div>
-                            <div>
-                                <CalendarBlank size={16} />
-                                10/04/2022
-                            </div>
-                        </footer>
-                    </C.CardTransaction>
+                    {transactions.map((transaction) =>
+                        <C.CardTransaction key={transaction.id}>
+                            <header>
+                                <span>{transaction.description}</span>
+                                <C.PriceHighlight $variant={transaction.type}>
+                                    {transaction.price}
+                                </C.PriceHighlight>
+                            </header>
+                            <footer>
+                                <div>
+                                    <TagSimple size={16} />
+                                    {transaction.category}
+                                </div>
+                                <div>
+                                    <CalendarBlank size={16} />
+                                    {transaction.createdAt}
+                                </div>
+                            </footer>
+                        </C.CardTransaction>
+                    )}
                 </C.TransactionCardList>
             </C.Container>
         </div>
