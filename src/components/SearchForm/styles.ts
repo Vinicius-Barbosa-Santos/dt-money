@@ -24,10 +24,6 @@ export const ContentForm = styled.div`
         color: ${({ theme }) => theme['gray-300']};
         background-color: ${({ theme }) => theme['gray-900']};
 
-        &:focus {
-            box-shadow: 0 0 0 2px ${(props) => props.theme['green-500']};
-        }
-
         &::placeholder {
             color: ${({ theme }) => theme['gray-500']};
         }
