@@ -7,7 +7,39 @@ import * as C from './styles'
 // import Phosphor
 import { X, ArrowCircleUp, ArrowCircleDown, } from 'phosphor-react'
 
+// import React Hook Form
+import { useForm } from 'react-hook-form'
+
+// import Zod
+import * as z from 'zod'
+
+// import ZodResolver
+import { zodResolver } from '@hookform/resolvers/zod'
+
+const newTransactionFormSchema = z.object({
+    description: z.string(),
+    price: z.number(),
+    category: z.string(),
+    // type: z.enum(['income', 'outcome'])
+})
+
+type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
+
 export const NewTranslationModal = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { isSubmitting }
+    } = useForm<NewTransactionFormInputs>({
+        resolver: zodResolver(newTransactionFormSchema)
+    })
+
+    const handleCreateNewTransactionForm = async (data: NewTransactionFormInputs) => {
+        await new Promise((resolve) => setTimeout(resolve, 2000))
+
+        console.log(data)
+    }
+
     return (
         <Dialog.Portal>
             <C.Overley />
@@ -15,10 +47,26 @@ export const NewTranslationModal = () => {
             <C.Content>
                 <h2>Nova Transação</h2>
 
-                <form action=''>
-                    <input type="text" placeholder='Descrição' />
-                    <input type="number" placeholder='Preço' />
-                    <input type="text" placeholder='Categoria' />
+                <form onSubmit={handleSubmit(handleCreateNewTransactionForm)}>
+                    <input
+                        type="text"
+                        placeholder='Descrição'
+                        required
+                        {...register('description')}
+
+                    />
+                    <input
+                        type="number"
+                        placeholder='Preço'
+                        required
+                        {...register('price', { valueAsNumber: true })}
+                    />
+                    <input
+                        type="text"
+                        placeholder='Categoria'
+                        required
+                        {...register('category')}
+                    />
 
                     <C.TransactionType>
                         <C.TransactionTypeButton variant='income' value='income'>
@@ -32,7 +80,7 @@ export const NewTranslationModal = () => {
                         </C.TransactionTypeButton>
                     </C.TransactionType>
 
-                    <button type='submit'>Cadastrar</button>
+                    <button type='submit' disabled={isSubmitting}>Cadastrar</button>
                 </form>
 
                 <C.Close>

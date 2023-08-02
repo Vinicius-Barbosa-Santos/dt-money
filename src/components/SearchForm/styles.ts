@@ -5,16 +5,13 @@ export const Container = styled.div`
     margin: 4rem auto 0;
 `
 
-export const ContentForm = styled.div`
+export const ContentForm = styled.form`
     gap: 1rem;
     display: flex;
 
-    form, input {
-        width: 100%;
-    }
-
     input {
         flex: 1;
+        width: 100%;
         height: 54px;
         padding: 0 1.25rem;
 
@@ -54,7 +51,12 @@ export const ButtonSearch = styled.button`
 
     background: transparent;
 
-    &:hover {
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
         color: ${(props) => props.theme.white};
         background: ${(props) => props.theme['green-500']};
     }

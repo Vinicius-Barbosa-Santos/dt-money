@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 import * as Dialog from '@radix-ui/react-dialog'
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import { Radio } from "phosphor-react";
 
 export const Overley = styled(Dialog.Overlay)`
     position: fixed;
@@ -45,6 +44,7 @@ export const Content = styled(Dialog.Content)`
             outline: 0;
             border-radius: 6px;
 
+            color: ${({ theme }) => theme.white};
             background-color: ${({ theme }) => theme['gray-900']};
         }
 
@@ -56,6 +56,16 @@ export const Content = styled(Dialog.Content)`
             border-radius: 6px;
 
             cursor: pointer;
+
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+
+            &:not(:disabled):hover {
+                background-color: ${({theme}) => theme['green-700']};
+                transition: background-color 0.2s;
+            }
 
             font-size: 1rem;
             font-weight: bold;
