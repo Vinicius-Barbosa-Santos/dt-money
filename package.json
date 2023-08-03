@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "vite",
     "server": "npx json-server -p 3500 -w data/db.json -d 500",
-    "lint" : "npx eslint src --ext .tsx,.ts ",
-    "lint-fix" : "npx eslint src --ext .tsx,.ts --fix",
+    "lint": "npx eslint src --ext .tsx,.ts ",
+    "lint-fix": "npx eslint src --ext .tsx,.ts --fix",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -22,10 +22,12 @@
     "json-server": "^0.17.3",
     "phosphor": "^0.7.1",
     "phosphor-react": "^1.4.1",
-    "react": "^18.0.0",
+    "react": "^18.2.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.45.2",
+    "scheduler": "^0.23.0",
     "styled-components": "^6.0.5",
+    "use-context-selector": "^1.4.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {

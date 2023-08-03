@@ -18,9 +18,9 @@ export const Header = () => {
 
         <Dialog.Root>
           <Dialog.Trigger asChild>
-            <C.ButtonTransation type="button">
+            <C.ButtonTransaction type="button">
               Nova Transação
-            </C.ButtonTransation>
+            </C.ButtonTransaction>
           </Dialog.Trigger>
 
           <NewTranslationModal />

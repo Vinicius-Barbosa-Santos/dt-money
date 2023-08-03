@@ -6,13 +6,13 @@ import { CalendarBlank, TagSimple } from 'phosphor-react'
 
 // import Context
 import { useContext } from 'react'
-import { TrasactionsContext } from '../../context/TransactionsContext'
+import { TransactionsContext } from '../../context/TransactionsContext'
 
 // import utils
 import { dateFormatter, priceFormatter } from '../../utils/formatter'
 
 export const TableTransactions = () => {
-  const { transactions } = useContext(TrasactionsContext)
+  const { transactions } = useContext(TransactionsContext)
 
   return (
     <div>

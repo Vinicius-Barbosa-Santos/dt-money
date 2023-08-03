@@ -12,7 +12,7 @@ import * as z from 'zod'
 
 // import ZodResolver
 import { zodResolver } from '@hookform/resolvers/zod'
-import { TrasactionsContext } from '../../context/TransactionsContext'
+import { TransactionsContext } from '../../context/TransactionsContext'
 
 // import Context
 import { useContext } from 'react'
@@ -24,7 +24,7 @@ const searchFormSchema = z.object({
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
 export const SearchForm = () => {
-  const { fetchTransactions } = useContext(TrasactionsContext)
+  const { fetchTransactions } = useContext(TransactionsContext)
 
   const {
     register,
@@ -42,7 +42,7 @@ export const SearchForm = () => {
     <C.Container>
       <C.ContentForm onSubmit={handleSubmit(handleSearchTransactions)}>
         <input
-          type="seach"
+          type="search"
           placeholder="Busque uma transação"
           {...register('query')}
         />

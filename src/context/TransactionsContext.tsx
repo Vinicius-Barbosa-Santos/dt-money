@@ -19,7 +19,7 @@ interface TransactionsTypeProps {
   createTransaction: (data: CreateTransactionInput) => Promise<void>
 }
 
-export const TrasactionsContext = createContext({} as TransactionsTypeProps)
+export const TransactionsContext = createContext({} as TransactionsTypeProps)
 
 interface TransactionProviderProps {
   children: ReactNode
@@ -59,10 +59,10 @@ export const TransactionProvider = ({ children }: TransactionProviderProps) => {
   }
 
   return (
-    <TrasactionsContext.Provider
+    <TransactionsContext.Provider
       value={{ transactions, fetchTransactions, createTransaction }}
     >
       {children}
-    </TrasactionsContext.Provider>
+    </TransactionsContext.Provider>
   )
 }

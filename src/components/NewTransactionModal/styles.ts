@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import * as Dialog from '@radix-ui/react-dialog'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
-export const Overley = styled(Dialog.Overlay)`
+export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
 
   width: 100%;

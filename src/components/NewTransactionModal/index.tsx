@@ -18,7 +18,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 // import Context
 import { useContext } from 'react'
-import { TrasactionsContext } from '../../context/TransactionsContext'
+import { TransactionsContext } from '../../context/TransactionsContext'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -30,7 +30,7 @@ const newTransactionFormSchema = z.object({
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
 
 export const NewTranslationModal = () => {
-  const { createTransaction } = useContext(TrasactionsContext)
+  const { createTransaction } = useContext(TransactionsContext)
 
   const {
     reset,
@@ -60,7 +60,7 @@ export const NewTranslationModal = () => {
 
   return (
     <Dialog.Portal>
-      <C.Overley />
+      <C.Overlay />
 
       <C.Content>
         <h2>Nova Transação</h2>

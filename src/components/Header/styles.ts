@@ -24,7 +24,7 @@ export const Content = styled.div`
   }
 `
 
-export const ButtonTransation = styled.button`
+export const ButtonTransaction = styled.button`
   height: 50px;
   width: 9.5rem;
 
