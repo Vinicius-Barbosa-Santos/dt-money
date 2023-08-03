@@ -1,57 +1,59 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.main`
-    width: 100%;
-    max-width: 1120px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 
-    @media(max-width: 1200px) {
-        padding: 0rem 1.25rem;
-    }
+  @media (max-width: 1200px) {
+    padding: 0rem 1.25rem;
+  }
 `
 
 export const TransactionsTable = styled.table`
-    width: 100%;
-    margin-top: 1.5rem;
-    
-    border-spacing: 0 0.5rem;
-    border-collapse: separate;
+  width: 100%;
+  margin-top: 1.5rem;
 
-    td {
-        margin: 1.5rem auto;
-        padding: 1.25rem 2rem;
+  border-spacing: 0 0.5rem;
+  border-collapse: separate;
 
-        background-color: ${({ theme }) => theme['gray-700']};
+  td {
+    margin: 1.5rem auto;
+    padding: 1.25rem 2rem;
 
-        &:first-child {
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
-        }
+    background-color: ${({ theme }) => theme['gray-700']};
 
-        &:last-child {
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 6px;
-        }
+    &:first-child {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
     }
 
-    @media(max-width: 769px) {
-        display: none;
+    &:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
     }
+  }
+
+  @media (max-width: 769px) {
+    display: none;
+  }
 `
 
 interface PriceHighlightProps {
-    $variant: 'income' | 'outcome';
+  $variant: 'income' | 'outcome'
 }
 
-
 export const PriceHighlight = styled.span<PriceHighlightProps>`
-    color : ${($props) => $props.$variant === 'income' ? $props.theme['green-300'] : $props.theme['red-300']};
+  color: ${($props) =>
+    $props.$variant === 'income'
+      ? $props.theme['green-300']
+      : $props.theme['red-300']};
 
-    @media (max-width: 769px) {
-      font-weight: 700;
-      font-size: 1.25rem;
-      line-height: 2.0rem;
-    }
+  @media (max-width: 769px) {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
 `
 
 export const TransactionCardList = styled.div`

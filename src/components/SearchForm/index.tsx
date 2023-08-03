@@ -18,40 +18,40 @@ import { TrasactionsContext } from '../../context/TransactionsContext'
 import { useContext } from 'react'
 
 const searchFormSchema = z.object({
-    query: z.string(),
+  query: z.string(),
 })
 
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
 export const SearchForm = () => {
-    const { fetchTransactions } = useContext(TrasactionsContext)
+  const { fetchTransactions } = useContext(TrasactionsContext)
 
-    const {
-        register,
-        handleSubmit,
-        formState: { isSubmitting }
-    } = useForm<SearchFormInputs>({
-        resolver: zodResolver(searchFormSchema)
-    })
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<SearchFormInputs>({
+    resolver: zodResolver(searchFormSchema),
+  })
 
-    const handleSearchTransactions = async (data: SearchFormInputs) => {
-        await fetchTransactions(data.query)
-    }
+  const handleSearchTransactions = async (data: SearchFormInputs) => {
+    await fetchTransactions(data.query)
+  }
 
-    return (
-        <C.Container>
-            <C.ContentForm onSubmit={handleSubmit(handleSearchTransactions)}>
-                <input
-                    type="seach"
-                    placeholder='Busque uma transação'
-                    {...register('query')}
-                />
+  return (
+    <C.Container>
+      <C.ContentForm onSubmit={handleSubmit(handleSearchTransactions)}>
+        <input
+          type="seach"
+          placeholder="Busque uma transação"
+          {...register('query')}
+        />
 
-                <C.ButtonSearch type='submit' disabled={isSubmitting}>
-                    <MagnifyingGlass size={20} />
-                    <span>Buscar</span>
-                </C.ButtonSearch>
-            </C.ContentForm>
-        </C.Container>
-    )
+        <C.ButtonSearch type="submit" disabled={isSubmitting}>
+          <MagnifyingGlass size={20} />
+          <span>Buscar</span>
+        </C.ButtonSearch>
+      </C.ContentForm>
+    </C.Container>
+  )
 }

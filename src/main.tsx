@@ -14,5 +14,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </TransactionProvider>
       <Global />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 )

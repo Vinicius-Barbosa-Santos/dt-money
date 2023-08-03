@@ -11,21 +11,21 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { NewTranslationModal } from '../NewTransactionModal'
 
 export const Header = () => {
-    return (
-        <C.Container>
-            <C.Content>
-                <img src={logoImg} alt="Logo DT Money" />
+  return (
+    <C.Container>
+      <C.Content>
+        <img src={logoImg} alt="Logo DT Money" />
 
-                <Dialog.Root>
-                    <Dialog.Trigger asChild>
-                        <C.ButtonTransation type='button'>
-                            Nova Transação
-                        </C.ButtonTransation>
-                    </Dialog.Trigger>
+        <Dialog.Root>
+          <Dialog.Trigger asChild>
+            <C.ButtonTransation type="button">
+              Nova Transação
+            </C.ButtonTransation>
+          </Dialog.Trigger>
 
-                    <NewTranslationModal />
-                </Dialog.Root>
-            </C.Content>
-        </C.Container>
-    )
+          <NewTranslationModal />
+        </Dialog.Root>
+      </C.Content>
+    </C.Container>
+  )
 }

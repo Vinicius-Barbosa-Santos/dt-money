@@ -1,46 +1,46 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.header`
-    height: 212px;
-    background-color: ${({theme}) => theme['gray-900']};
+  height: 212px;
+  background-color: ${({ theme }) => theme['gray-900']};
 
-    @media(max-width: 768px) {
-        img {
-            width: 117px;
-        }
+  @media (max-width: 768px) {
+    img {
+      width: 117px;
     }
+  }
 `
 
 export const Content = styled.div`
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    margin: 0 auto;
-    max-width: 1120px;
-    padding: 2.5rem 0rem;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 2.5rem 0rem;
 
-    @media(max-width: 1200px) {
-        padding: 2.5rem 1.25rem;
-    }
+  @media (max-width: 1200px) {
+    padding: 2.5rem 1.25rem;
+  }
 `
 
 export const ButtonTransation = styled.button`
-    height: 50px;
-    width: 9.5rem;
+  height: 50px;
+  width: 9.5rem;
 
-    border: 0;
-    border-radius: 6px;
+  border: 0;
+  border-radius: 6px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-size: 1rem;
-    font-weight: 700;
-    color: ${({theme}) => theme.white};
-    background-color: ${({theme}) => theme['green-500']};
+  font-size: 1rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => theme['green-500']};
 
-    @media(max-width: 768px) {
-        height: 38px;
-        width: 8.125rem;
-        font-size: 0.875rem;
-    }
+  @media (max-width: 768px) {
+    height: 38px;
+    width: 8.125rem;
+    font-size: 0.875rem;
+  }
 `
