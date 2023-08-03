@@ -1,9 +1,11 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 
 import { TransactionsType } from '../interface/TransactionsType'
+import { api } from "../lib/axios";
 
 interface TransactionsTypeProps {
     transactions: TransactionsType[],
+    fetchTransactions: (query? : string) => Promise<void>
 }
 
 export const TrasactionsContext = createContext({} as TransactionsTypeProps)
@@ -19,20 +21,18 @@ export const TransactionProvider = ({ children }: TransactionProviderProps) => {
         fetchTransactions()
     }, [])
 
-    const fetchTransactions = async () => {
-        try {
-            const response = await fetch('http://localhost:3500/transactions')
-            if (!response.ok) throw Error('Erro de Requisição')
-            const data = await response.json()
+    const fetchTransactions = async (query? : string) => {
+        const response = await api.get('transactions', {
+            params: {
+                q: query
+            }
+        })
 
-            setTransactions(data)
-        } catch (e: any) {
-            console.error(e.message)
-        }
+        setTransactions(response.data)            
     }
 
     return (
-        <TrasactionsContext.Provider value={{ transactions }}>
+        <TrasactionsContext.Provider value={{ transactions, fetchTransactions }}>
             {children}
         </TrasactionsContext.Provider>
     )
