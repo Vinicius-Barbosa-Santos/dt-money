@@ -24,7 +24,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O Ignite DT Money é um app que foi construído para estudo de aprendizagem para conceitos como Context API, React Hook Form, consumo de API, Styled Components entre outros, o objetivo do projeto era fazer um Sistema de Finanças Pessoais.
+O Ignite DT Money é um aplicativo criado com o propósito de facilitar o estudo e compreensão de conceitos como Context API, React Hook Form, consumo de API, Styled Components, entre outros. O projeto foi desenvolvido com o objetivo de criar um Sistema de Finanças Pessoais.
 
 ## 🚀 Como executar
 
