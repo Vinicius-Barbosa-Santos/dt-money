@@ -30,7 +30,7 @@ O Ignite DT Money é um app que foi construído para estudo de aprendizagem para
 
 - Clone o repositório
 - Instale as dependências com `npm`
-- Inicie o servidor com `npm start`
+- Inicie o servidor com `npm dev`
 
 ## Como executar o JSON Server
 
