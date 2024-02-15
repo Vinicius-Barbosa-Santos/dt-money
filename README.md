@@ -35,7 +35,7 @@ O Ignite DT Money é um app que foi construído para estudo de aprendizagem para
 ## Como executar o JSON Server
 
 ```bash
-  npm run server
+  npm run dev
 ```
 
 Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
